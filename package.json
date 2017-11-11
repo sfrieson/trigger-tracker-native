@@ -4,7 +4,6 @@
   "private": true,
   "repository": "git@github.com:sfrieson/trigger-tracker-native.git",
   "devDependencies": {
-    "flow-bin": "0.53.0",
     "jest-expo": "^22.0.0",
     "react-native-scripts": "1.7.0",
     "react-test-renderer": "16.0.0-beta.5"
