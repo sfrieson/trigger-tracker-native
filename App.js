@@ -1,23 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render () {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+// import WelcomeScreen from './screens/Welcome';
+import TrackScreen from './screens/Track';
+import HistoryScreen from './screens/History';
+import AnalysisScreen from './screens/Analysis';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eee',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+import { colors } from './config'
+
+const App = TabNavigator({
+  History: {screen: HistoryScreen},
+  Track: {screen: TrackScreen},
+  Analysis: {screen: AnalysisScreen}
+}, {
+  animationEnabled: true,
+  initialRouteName: 'Track',
+  tabBarOptions: {
+    activeTintColor: colors.activeTab
+  },
+  tabBarPosition: 'bottom'
+})
+
+export default App
