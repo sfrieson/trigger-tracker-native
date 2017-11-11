@@ -1,23 +1,13 @@
-import { TabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 // import WelcomeScreen from './screens/Welcome';
-import TrackScreen from './screens/Track';
-import HistoryScreen from './screens/History';
-import AnalysisScreen from './screens/Analysis';
+import Main from './navigators/Main';
+import Form from './screens/Form';
 
-import { colors } from './config'
 
-const App = TabNavigator({
-  History: {screen: HistoryScreen},
-  Track: {screen: TrackScreen},
-  Analysis: {screen: AnalysisScreen}
-}, {
-  animationEnabled: true,
-  initialRouteName: 'Track',
-  tabBarOptions: {
-    activeTintColor: colors.activeTab
-  },
-  tabBarPosition: 'bottom'
+const App = StackNavigator({
+  Home: {screen: Main},
+  Form: {screen: Form}
 })
 
 export default App

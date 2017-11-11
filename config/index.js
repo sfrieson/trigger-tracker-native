@@ -3,7 +3,8 @@ export const colors = {
   background: '#eee',
   primary: '#0f0',
   secondary: '#f00',
-  text: '#333'
+  text: '#333',
+  white: '#fff'
 };
 
 Object.assign(colors, {
