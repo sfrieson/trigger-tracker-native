@@ -12,7 +12,7 @@ export default TabNavigator({
   Analysis: {screen: AnalysisScreen}
 }, {
   animationEnabled: true,
-  initialRouteName: 'Track',
+  // initialRouteName: 'Track',
   tabBarOptions: {
     activeTintColor: colors.activeTab
   },

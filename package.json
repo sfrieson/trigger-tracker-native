@@ -31,8 +31,9 @@
     "parser": "babel-eslint",
     "globals": [
       "describe",
-      "it",
-      "expect"
+      "expect",
+      "fetch",
+      "it"
     ]
   }
 }

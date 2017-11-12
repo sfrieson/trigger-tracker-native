@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, View } from 'react-native'
 
+import api from '../../api'
 import Input from '../../components/Input'
 
 export default class Form extends React.Component {
@@ -59,8 +60,14 @@ export default class Form extends React.Component {
   }
 
   sendData () {
+    const { type } = this.props.navigation.state.params
     console.log('Sending:', this.state.form)
-    this.props.navigation.navigate('Main')
+    let res
+    if (type === 'Record') res = api.makeRecord(this.state.form)
+    if (type === 'Report') res = api.makeReport(this.state.form)
+
+    res.then(() => this.props.navigation.navigate('Main'))
+    .catch(err => console.log(err))
   }
 }
 const forms = {
