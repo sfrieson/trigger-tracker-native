@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, View } from 'react-native'
+import { Button, ScrollView } from 'react-native'
 
 import api from '../../api'
 import Input from '../../components/Input'
@@ -26,7 +26,7 @@ export default class Form extends React.Component {
     const { type } = this.props.navigation.state.params
     const fields = forms[type].fields
     return (
-      <View>
+      <ScrollView>
         {fields.map((field, i) => (
           <Input
             {...field}
@@ -40,7 +40,7 @@ export default class Form extends React.Component {
           />
         ))}
         <Button title='Send' onPress={this.sendData} />
-      </View>
+      </ScrollView>
     )
   }
 

@@ -30,6 +30,7 @@
   "standard": {
     "parser": "babel-eslint",
     "globals": [
+      "__DEV__",
       "describe",
       "expect",
       "fetch",

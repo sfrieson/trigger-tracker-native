@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation'
 
-import WelcomeScreen from './screens/Welcome';
+import WelcomeScreen from './screens/Welcome'
 import Main from './navigators/Main'
 import Form from './screens/Form'
 
