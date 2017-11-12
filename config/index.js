@@ -1,15 +1,20 @@
 export const colors = {
-  activeTab: '#00f',
   background: '#eee',
-  primary: '#0f0',
-  secondary: '#f00',
+  brown: '#752A14',
+  green: '#1C752A',
+  greenDark: '#0F4A31',
+  red: '#9E1725',
+  tan: '#A86D2C',
   text: '#333',
   white: '#fff'
 }
 
 Object.assign(colors, {
-  record: colors.primary,
-  report: colors.secondary
+  activeTab: colors.green,
+  primary: colors.greenDark,
+  secondary: colors.brown,
+  record: colors.greenDark,
+  report: colors.red
 })
 
 export const fonts = {

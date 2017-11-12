@@ -1,10 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 
 import api from '../../api'
 import { colors, fonts } from '../../config'
 
 export default class HistoryScreen extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'History',
+    tabBarIcon: ({ tintColor }) => (
+      <Image source={require('../../assets/icon-history-2x.png')} style={[styles.icon, {tintColor}]} />
+    )
+  }
+
   constructor (props) {
     super(props)
     this.state = {
@@ -38,5 +45,9 @@ const styles = StyleSheet.create({
     fontFamily: fonts.heading,
     fontSize: 30,
     fontWeight: 'bold'
+  },
+  icon: {
+    width: 26,
+    height: 26
   }
 })

@@ -1,14 +1,23 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 
 import { colors, fonts } from '../../config'
 
-export default function AnalysisScreen () {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.logo}>Analysis</Text>
-    </View>
-  )
+export default class AnalysisScreen extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'Analysis',
+    tabBarIcon: ({ tintColor }) => (
+      <Image source={require('../../assets/icon-analysis-2x.png')} style={[styles.icon, {tintColor}]} />
+    )
+  }
+
+  render () {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.logo}>Analysis</Text>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -23,5 +32,9 @@ const styles = StyleSheet.create({
     fontFamily: fonts.heading,
     fontSize: 30,
     fontWeight: 'bold'
+  },
+  icon: {
+    width: 26,
+    height: 26
   }
 })
