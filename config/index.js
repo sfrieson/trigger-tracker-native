@@ -5,12 +5,12 @@ export const colors = {
   secondary: '#f00',
   text: '#333',
   white: '#fff'
-};
+}
 
 Object.assign(colors, {
   record: colors.primary,
   report: colors.secondary
-});
+})
 
 export const fonts = {
   heading: 'Al Nile'

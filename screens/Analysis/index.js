@@ -1,14 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-import { colors, fonts } from '../../config';
+import { colors, fonts } from '../../config'
 
 export default function AnalysisScreen () {
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>Analysis</Text>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold'
   }
-});
+})

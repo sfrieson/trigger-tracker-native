@@ -1,8 +1,8 @@
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator } from 'react-navigation'
 
-import TrackScreen from '../screens/Track';
-import HistoryScreen from '../screens/History';
-import AnalysisScreen from '../screens/Analysis';
+import TrackScreen from '../screens/Track'
+import HistoryScreen from '../screens/History'
+import AnalysisScreen from '../screens/Analysis'
 
 import { colors } from '../config'
 
