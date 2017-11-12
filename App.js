@@ -5,7 +5,7 @@ import Main from './navigators/Main'
 import Form from './screens/Form'
 
 const App = StackNavigator({
-  Home: {screen: Main},
+  Main: {screen: Main},
   Form: {screen: Form}
 })
 

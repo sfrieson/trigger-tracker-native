@@ -18,10 +18,11 @@ export default class Form extends React.Component {
         return form
       }, {})
     }
+
+    this.sendData = this.sendData.bind(this)
   }
   render () {
     const { type } = this.props.navigation.state.params
-
     const fields = forms[type].fields
     return (
       <View>
@@ -37,7 +38,7 @@ export default class Form extends React.Component {
             defaultValue={this.state.form[field.name]}
           />
         ))}
-        <Button title='Send' onPress={() => console.log(this.state.form)} />
+        <Button title='Send' onPress={this.sendData} />
       </View>
     )
   }
@@ -55,6 +56,11 @@ export default class Form extends React.Component {
 
   changeFocus (field) {
     if (field) this.setState({focused: field.name})
+  }
+
+  sendData () {
+    console.log('Sending:', this.state.form)
+    this.props.navigation.navigate('Main')
   }
 }
 const forms = {
