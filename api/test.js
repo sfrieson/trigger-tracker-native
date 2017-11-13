@@ -1,4 +1,4 @@
-const API_URL = 'https://trigger-tracker-api.herokuapp.com/graphql'
+const API_URL = 'http://192.168.0.14:3000/graphql'
 
 export default {
   getHistory: () => fetch(API_URL, {

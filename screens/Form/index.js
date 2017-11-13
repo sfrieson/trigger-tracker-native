@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, ScrollView } from 'react-native'
 
 import api from '../../api'
+import testApi from '../../api/test'
 import Input from '../../components/Input'
 
 export default class Form extends React.Component {
@@ -21,6 +22,7 @@ export default class Form extends React.Component {
     }
 
     this.sendData = this.sendData.bind(this)
+    this.sendTestData = this.sendTestData.bind(this)
   }
   render () {
     const { type } = this.props.navigation.state.params
@@ -39,6 +41,7 @@ export default class Form extends React.Component {
             defaultValue={this.state.form[field.name]}
           />
         ))}
+        <Button title='Test Send' onPress={this.sendTestData} />
         <Button title='Send' onPress={this.sendData} />
       </ScrollView>
     )
@@ -59,6 +62,16 @@ export default class Form extends React.Component {
     if (field) this.setState({focused: field.name})
   }
 
+  sendTestData () {
+    const { type } = this.props.navigation.state.params
+    console.log('Sending:', this.state.form)
+    let res
+    if (type === 'Record') res = testApi.makeRecord(this.state.form)
+    if (type === 'Report') res = testApi.makeReport(this.state.form)
+
+    res.then(() => this.props.navigation.navigate('Main'))
+    .catch(err => console.log(err))
+  }
   sendData () {
     const { type } = this.props.navigation.state.params
     console.log('Sending:', this.state.form)
